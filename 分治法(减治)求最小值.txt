@@ -1,0 +1,60 @@
+Æ½¾ù O(nlogn)
+#include<iostream>
+#include<cstdio>
+#include<stack>
+#include<cstring>
+using namespace std;
+int A[10];
+int minn;
+int _;
+void choose(int n,int st,int m,int ed)
+{
+    for(int i=st;i<=m;i++)
+        if(A[i]<minn)
+          minn=A[i];
+    for(int i=m;i<=ed;i++)
+        if(A[i]<minn)
+          minn=A[i];
+
+
+}
+void solve(int n,int st,int ed)
+{
+    if(st<ed)
+    {
+        int mid=(st+ed)/2;
+        solve(n,st,mid);
+        solve(n,mid+1,ed);
+        choose(n,st,mid,ed);
+    }
+
+}
+void solve2(int n,int st,int ed)
+{
+    if(ed-st<=1)
+    {
+        _++;
+        int tmp;
+        tmp=min(A[ed],A[st]);
+        minn=min(minn,tmp);
+
+
+    }
+    else
+    {
+
+        int mid=(st+ed)/2;
+        solve2(n,st,mid);
+        solve2(n,mid+1,ed);
+    }
+
+}
+int main()
+{
+    minn=1000000;
+    for(int i=0;i<10;i++)
+    cin>>A[i];
+    solve2(10,0,9);
+    cout<<minn<<' '<<_<<endl;
+    return 0;
+}
