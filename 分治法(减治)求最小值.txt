@@ -1,4 +1,5 @@
-ƽ�� O(nlogn)
+Æ½¾ù O(nlogn)
+//分治法快是因为它是一对一对来比较，而不是暴力法那种一个一个的比，所以一定程度上比暴力快。可以举个3个数的例子，分治只需要2次，而暴力要3次才能找到最小值。
 #include<iostream>
 #include<cstdio>
 #include<stack>
