@@ -3,7 +3,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 typedef long long ll;
-ll calc(int bit,ll base,ll n)//ÔÚÖ¸ÊýÎªi£¬»ùÊýÎªbaseµÄÇé¿öÏÂ£¬¼ÆËã1 + base + base^2 + base^3+...+base^(bit-1) = n
+ll calc(int bit,ll base,ll n)//åœ¨æŒ‡æ•°ä¸ºiï¼ŒåŸºæ•°ä¸ºbaseçš„æƒ…å†µä¸‹ï¼Œè®¡ç®—1 + base + base^2 + base^3+...+base^(bit-1) = n
 {
    ll result=1;
    ll t=1;
@@ -16,7 +16,7 @@ ll calc(int bit,ll base,ll n)//ÔÚÖ¸ÊýÎªi£¬»ùÊýÎªbaseµÄÇé¿öÏÂ£¬¼ÆËã1 + base + bas
    }
    return result;
 }
-int Search(int i, ll n)//ÔÚ¸ø¶¨Ö¸ÊýÏÞÖÆÏÂ½øÐÐ¶þ·ÖÃ¶¾Ùbase£¬ÕÒµ½µÚÒ»¸ö>=nµÄÊý
+int Search(int i, ll n)//åœ¨ç»™å®šæŒ‡æ•°é™åˆ¶ä¸‹è¿›è¡ŒäºŒåˆ†æžšä¸¾baseï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ª>=nçš„æ•°
 {
     ll l,r;
     ll basepos;
@@ -26,7 +26,7 @@ int Search(int i, ll n)//ÔÚ¸ø¶¨Ö¸ÊýÏÞÖÆÏÂ½øÐÐ¶þ·ÖÃ¶¾Ùbase£¬ÕÒµ½µÚÒ»¸ö>=nµÄÊý
     {
         ll mid;
         mid = (l+r)/2;
-        if(calc(i,mid,n)< n)//¼ÆËãºÍµ±Ç°n±È½Ï
+        if(calc(i,mid,n)< n)//è®¡ç®—å’Œå½“å‰næ¯”è¾ƒ
         {
             l = mid + 1;
             basepos= l;
@@ -52,7 +52,7 @@ ll solve(ll n)
           if(base!=-1)
               break;
       }
-    printf("1µÄ¸öÊý:%d \n",i);
+    printf("1çš„ä¸ªæ•°:%d \n",i);
     return base;
 }
 int main()
@@ -69,7 +69,7 @@ int main()
     return 0;
 }
 */
-//Google Codejam apac-test Problem B. Beautiful Numbers  Ð¡¹æÄ£Êý¾Ý¼¯Í¨¹ý
+//Google Codejam apac-test Problem B. Beautiful Numbers  å°è§„æ¨¡æ•°æ®é›†é€šè¿‡
 #include<stdio.h>
 typedef long long ll;
 ll calc(int bit,ll base,ll n)//
@@ -92,7 +92,7 @@ ll calc(int bit,ll base,ll n)//
 
    return result;
 }
-int Search(int i, ll n)//
+ll Search(int i, ll n)//
 {
 
     ll l,r;
