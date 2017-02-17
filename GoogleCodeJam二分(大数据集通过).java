@@ -8,13 +8,12 @@ import java.math.BigInteger;
 import java.util.Scanner;
 
 public class Code {
-	public static BigInteger calc(int bit,BigInteger base,BigInteger n)//
+	public static BigInteger calc(int bit,BigInteger base,BigInteger n)
 	{
-		BigInteger result=BigInteger.valueOf(1);
-		BigInteger  t=BigInteger.valueOf(1);
+           BigInteger result=BigInteger.valueOf(1);
+	   BigInteger  t=BigInteger.valueOf(1);
 	   for(int i=1;i<bit;i++)
 	   {
-
 	       t=t.multiply(base);
 	       result =result.add(t);
 	       if(result.compareTo(n)>0)
@@ -24,12 +23,12 @@ public class Code {
 	}
 	public static BigInteger Search(int i, BigInteger n)
 	{   
-		BigInteger l,r,basepos=null;
-		r=n;
-		l=BigInteger.valueOf(2);
-		while(l.compareTo(r)<0)
+	   BigInteger l,r,basepos=null;
+	   r=n;
+	   l=BigInteger.valueOf(2);
+	   while(l.compareTo(r)<0)
 	    {
-			BigInteger mid;
+		BigInteger mid;
 	        mid = (l.add(r)).divide(BigInteger.valueOf(2));
 	        if(calc(i,mid,n).compareTo(n)<0)//
 	        {
@@ -55,17 +54,17 @@ public class Code {
 		base=n.subtract(consOne);
 		int i;
 		for(i=60;i>=2;i--)
-	      {
+	         {
 	          base =Search(i,n);
 	          if(base.equals(consMinusOne))
 	              continue;
 	          else
 	        	  break;
-	      }
+	         }
 		return base;
 	}
         /**
-         *java°æ ¶ÁÐ´²âÊÔÊý¾Ý
+         *javaç‰ˆ è¯»å†™æµ‹è¯•æ•°æ®
          *
          */
 	public static void main(String[] args) {
@@ -75,19 +74,19 @@ public class Code {
 		m=0;
 		Scanner in =new Scanner(System.in);
 		try{ 
-			  in=new Scanner(new FileInputStream("D:\\B-large-practice.in"));
+		      in=new Scanner(new FileInputStream("D:\\B-large-practice.in"));
 		   }
-		  catch(Exception e){}
+		catch(Exception e){}
 		t=in.nextInt();
 		while(t>0)
-	    {  
-			t--;
-	        n=in.nextBigInteger();
-	        String s=null;
-	        s="Case #"+(++m)+": "+solve(n)+"\n";
-	       System.out.println(s);
-	       try {
-				FileOutputStream out = new FileOutputStream("D:\\BigResults.out",true);//×·¼ÓÐ´ÈëÎÄ¼þ
+	        {  
+		    t--;
+	            n=in.nextBigInteger();
+	            String s=null;
+	            s="Case #"+(++m)+": "+solve(n)+"\n";
+	            System.out.println(s);
+	            try {
+				FileOutputStream out = new FileOutputStream("D:\\BigResults.out",true);//è¿½åŠ å†™å…¥æ–‡ä»¶
 				try {
 					out.write(s.getBytes());
 				} catch (IOException e) {
@@ -98,10 +97,9 @@ public class Code {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-	    }
+	       }
 		in.close();
-		
-	}
+	    }
 
 }
 
